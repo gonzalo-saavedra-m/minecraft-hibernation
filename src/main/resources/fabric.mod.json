@@ -1,0 +1,19 @@
+{
+	"schemaVersion": 1,
+	"id": "hibernation",
+	"version": "${version}",
+	"name": "Hibernation",
+	"description": "Hibernates an empty dedicated server to disk with CRaC and resumes it in seconds, mods and world already loaded.",
+	"license": "MIT",
+	"environment": "server",
+	"entrypoints": {
+		"main": ["hibernation.Hibernation"]
+	},
+	"mixins": ["hibernation.mixins.json"],
+	"depends": {
+		"fabricloader": ">=0.16",
+		"fabric-api": "*",
+		"minecraft": "1.21.1",
+		"java": ">=21"
+	}
+}
