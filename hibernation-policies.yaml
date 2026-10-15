@@ -1,0 +1,11 @@
+# CRaC policy for what the JVM has open when it hibernates (jdk.crac.resource-policies, used by start.sh).
+# Listening sockets (for example, authlib-injector's local httpd): closed, then reopened on the same address.
+type: socket
+listening: true
+action: reopen
+---
+# Files stay open and the checkpoint engine reopens them read-only on restore. Fine for mod jars and session.lock;
+# the mod itself closes region files and reopens the logs.
+type: file
+action: ignore
+warn: false
